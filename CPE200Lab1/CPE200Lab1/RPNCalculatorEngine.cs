@@ -8,7 +8,7 @@ namespace CPE200Lab1
 {
     public class RPNCalculatorEngine : CalculatorEngine
     {
-        public new string Process(string str)
+        public new string calculate(string str)
         {
            try 
             {       
@@ -25,6 +25,7 @@ namespace CPE200Lab1
             List<string> parts = str.Split(' ').ToList<string>();
             string result;
             string firstOperand, secondOperand;
+            if (isOperator(parts[0])) return "E";
             if (isOperator(parts[0])) return "E";
             foreach (string token in parts)
             {
